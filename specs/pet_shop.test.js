@@ -131,14 +131,14 @@ describe('pet shop', () => {
     expect(myFunctions.getPetByName(petShop, "Fred")).toBeUndefined();
   });
 
-  xtest('can remove all pets called Arthur', () => {
+  test('can remove all pets called Arthur', () => {
     // HINT: You can loop round an array starting at the end
     // using for(var i = shop.pets.length-1; i >= 0; i--){}
     myFunctions.removePetByName(petShop, "Arthur");
     expect(myFunctions.getPetByName(petShop, "Arthur")).toBeUndefined();
   });
 
-  xtest('can add a new pet to stock', () => {
+  test('can add a new pet to stock', () => {
     myFunctions.addPetToStock(petShop, newPet);
     expect(myFunctions.getStockCount(petShop)).toBe(7);
   });

@@ -40,6 +40,18 @@ myFunctions = {
         return pet;
       }
     }
+  },
+
+  removePetByName(shop, petName) {
+    for(var i = shop.pets.length-1; i >= 0; i--) {
+      if (shop.pets[i].name === petName) {
+        shop.pets.splice(i, 1);
+      }
+    }
+  },
+
+  addPetToStock(shop, newPet) {
+    shop.pets.push(newPet);
   }
 
 };
