@@ -178,7 +178,7 @@ describe('pet shop', () => {
   // These are 'integration' tests so we want multiple assertions.
   // If one fails the entire test should fail
 
-  xtest('customer can buy a pet', () => {
+  test('customer can buy a pet', () => {
     var customer = customers[0];
     var pet = myFunctions.getPetByName(petShop, "Arthur");
     myFunctions.sellPetToCustomer(petShop, pet, customer);
@@ -189,7 +189,7 @@ describe('pet shop', () => {
     expect(myFunctions.getTotalCash(petShop)).toBe(1900);
   });
 
-  xtest('customer cant buy a pet that doesnt exist', () => {
+  test('customer cant buy a pet that doesnt exist', () => {
     var customer = customers[0];
     var pet = myFunctions.getPetByName(petShop, "Dave");
     myFunctions.sellPetToCustomer(petShop, pet, customer);
@@ -200,7 +200,7 @@ describe('pet shop', () => {
     expect(myFunctions.getTotalCash(petShop)).toBe(1000);
   });
 
-  xtest('customer cant buy a pet if they cant afford it', () => {
+  test('customer cant buy a pet if they cant afford it', () => {
     var customer = customers[1];
     var pet = myFunctions.getPetByName(petShop, "Athur");
     myFunctions.sellPetToCustomer(petShop, pet, customer);

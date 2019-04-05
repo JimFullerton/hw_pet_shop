@@ -84,6 +84,16 @@ myFunctions = {
     } else {
       return false;
     }
+  },
+
+  sellPetToCustomer(shop, pet, cust) {
+    if ((pet) && (myFunctions.customerCanAffordPet(cust, pet))) {
+      myFunctions.addPetToCustomer(cust, pet);
+      myFunctions.increasePetsSold(shop, 1);
+      myFunctions.removeCustomerCash(cust, pet.price);
+      myFunctions.addOrRemoveCash(shop, pet.price);
+    }
+
   }
 
 };
