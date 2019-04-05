@@ -98,24 +98,24 @@ describe('pet shop', () => {
     expect(myFunctions.getPetsSold(petShop)).toBe(0);
   });
 
-  test('can increase number of pets sold', () => {
+  xtest('can increase number of pets sold', () => {
     myFunctions.increasePetsSold(petShop, 2);
     expect(myFunctions.getPetsSold(petShop)).toBe(2);
   });
 
-  test('can get stock count', () => {
+  xtest('can get stock count', () => {
     expect(myFunctions.getStockCount(petShop)).toBe(6);
   });
 
-  test('can get pets by breed', () => {
+  xtest('can get pets by breed', () => {
     expect(myFunctions.getPetsByBreed(petShop, "British Shorthair")).toBe(2);
   });
 
-  test('returns 0 if not pet by breed found', () => {
+  xtest('returns 0 if not pet by breed found', () => {
     expect(myFunctions.getPetsByBreed(petShop, "Dalmation")).toBe(0);
   });
 
-  test('finds a pet by name', () => {
+  xtest('finds a pet by name', () => {
     expect(myFunctions.getPetByName(petShop, "Arthur"))
       .toEqual(
         {
@@ -127,58 +127,58 @@ describe('pet shop', () => {
       );
   });
 
-  test('returns undefined if pet is not found by name', () => {
+  xtest('returns undefined if pet is not found by name', () => {
     expect(myFunctions.getPetByName(petShop, "Fred")).toBeUndefined();
   });
 
-  test('can remove all pets called Arthur', () => {
+  xtest('can remove all pets called Arthur', () => {
     // HINT: You can loop round an array starting at the end
     // using for(var i = shop.pets.length-1; i >= 0; i--){}
     myFunctions.removePetByName(petShop, "Arthur");
     expect(myFunctions.getPetByName(petShop, "Arthur")).toBeUndefined();
   });
 
-  test('can add a new pet to stock', () => {
+  xtest('can add a new pet to stock', () => {
     myFunctions.addPetToStock(petShop, newPet);
     expect(myFunctions.getStockCount(petShop)).toBe(7);
   });
 
-  test('can get a customers cash', () => {
+  xtest('can get a customers cash', () => {
     expect(myFunctions.getCustomersCash(customers[0])).toBe(1000);
   });
 
-  test('can get total customers cash', () => {
+  xtest('can get total customers cash', () => {
     expect(myFunctions.getCustomersCashTotal(customers)).toBe(1050);
   });
 
-  test('can remove customers cash', () => {
+  xtest('can remove customers cash', () => {
     myFunctions.removeCustomerCash(customers[0], 100);
     expect(customers[0].cash).toBe(900);
   });
 
-  test('can get number of pets for a customer', () => {
+  xtest('can get number of pets for a customer', () => {
     expect(myFunctions.getCustomerPetCount(customers[0])).toBe(0);
   });
 
-  test('can add a pet to a customer', () => {
+  xtest('can add a pet to a customer', () => {
     myFunctions.addPetToCustomer(customers[0], newPet);
     expect(myFunctions.getCustomerPetCount(customers[0])).toBe(1);
   });
 
   // EXTENSIONS
 
-  test('customer CANT afford a pet', () => {;
+  xtest('customer CANT afford a pet', () => {;
     expect(myFunctions.customerCanAffordPet(customers[1], newPet)).toBeFalsy();
   });
 
-  test('customer CAN afford a pet', () => {;
+  xtest('customer CAN afford a pet', () => {;
     expect(myFunctions.customerCanAffordPet(customers[0], newPet)).toBeTruthy();
   });
 
   // These are 'integration' tests so we want multiple assertions.
   // If one fails the entire test should fail
 
-  test('customer can buy a pet', () => {
+  xtest('customer can buy a pet', () => {
     var customer = customers[0];
     var pet = myFunctions.getPetByName(petShop, "Arthur");
     myFunctions.sellPetToCustomer(petShop, pet, customer);
@@ -189,7 +189,7 @@ describe('pet shop', () => {
     expect(myFunctions.getTotalCash(petShop)).toBe(1900);
   });
 
-  test('customer cant buy a pet that doesnt exist', () => {
+  xtest('customer cant buy a pet that doesnt exist', () => {
     var customer = customers[0];
     var pet = myFunctions.getPetByName(petShop, "Dave");
     myFunctions.sellPetToCustomer(petShop, pet, customer);
@@ -200,7 +200,7 @@ describe('pet shop', () => {
     expect(myFunctions.getTotalCash(petShop)).toBe(1000);
   });
 
-  test('customer cant buy a pet if they cant afford it', () => {
+  xtest('customer cant buy a pet if they cant afford it', () => {
     var customer = customers[1];
     var pet = myFunctions.getPetByName(petShop, "Athur");
     myFunctions.sellPetToCustomer(petShop, pet, customer);
