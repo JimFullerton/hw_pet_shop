@@ -76,6 +76,14 @@ myFunctions = {
 
   addPetToCustomer(cust, newPet) {
     cust.pets.push(newPet);
+  },
+
+  customerCanAffordPet(cust, newPet) {
+    if (cust.cash > newPet.price) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 };
