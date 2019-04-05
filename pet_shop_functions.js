@@ -14,6 +14,14 @@ myFunctions = {
 
   getPetsSold(shop) {
     return shop.admin.petsSold;
+  },
+
+  increasePetsSold(shop, numberSold) {
+    shop.admin.petsSold += numberSold;
+  },
+
+  getStockCount(shop) {
+    return shop.pets.length;
   }
 };
 
