@@ -68,6 +68,14 @@ myFunctions = {
 
   removeCustomerCash(cust, cashDebit) {
     cust.cash -= cashDebit;
+  },
+
+  getCustomerPetCount(cust) {
+    return cust.pets.length;
+  },
+
+  addPetToCustomer(cust, newPet) {
+    cust.pets.push(newPet);
   }
 
 };
