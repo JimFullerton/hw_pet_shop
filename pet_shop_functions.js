@@ -32,9 +32,15 @@ myFunctions = {
       }
     }
     return countByBreed;
-  }
+  },
 
-  
+  getPetByName(shop, petName) {
+    for (pet of shop.pets) {
+      if (pet.name === petName) {
+        return pet;
+      }
+    }
+  }
 
 };
 

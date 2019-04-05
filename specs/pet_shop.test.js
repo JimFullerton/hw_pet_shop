@@ -127,7 +127,7 @@ describe('pet shop', () => {
       );
   });
 
-  xtest('returns undefined if pet is not found by name', () => {
+  test('returns undefined if pet is not found by name', () => {
     expect(myFunctions.getPetByName(petShop, "Fred")).toBeUndefined();
   });
 
