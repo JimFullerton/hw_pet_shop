@@ -107,15 +107,15 @@ describe('pet shop', () => {
     expect(myFunctions.getStockCount(petShop)).toBe(6);
   });
 
-  xtest('can get pets by breed', () => {
+  test('can get pets by breed', () => {
     expect(myFunctions.getPetsByBreed(petShop, "British Shorthair")).toBe(2);
   });
 
-  xtest('returns 0 if not pet by breed found', () => {
+  test('returns 0 if not pet by breed found', () => {
     expect(myFunctions.getPetsByBreed(petShop, "Dalmation")).toBe(0);
   });
 
-  xtest('finds a pet by name', () => {
+  test('finds a pet by name', () => {
     expect(myFunctions.getPetByName(petShop, "Arthur"))
       .toEqual(
         {

@@ -22,7 +22,20 @@ myFunctions = {
 
   getStockCount(shop) {
     return shop.pets.length;
+  },
+
+  getPetsByBreed(shop, breed) {
+    let countByBreed = 0;
+    for (pet of shop.pets) {
+      if (pet.breed === breed) {
+        countByBreed++;
+      }
+    }
+    return countByBreed;
   }
+
+  
+
 };
 
 module.exports = myFunctions;
