@@ -52,6 +52,22 @@ myFunctions = {
 
   addPetToStock(shop, newPet) {
     shop.pets.push(newPet);
+  },
+
+  getCustomersCash(cust) {
+    return cust.cash;
+  },
+
+  getCustomersCashTotal(custs) {
+    let custCashTot = 0;
+    for (let cust of custs) {
+      custCashTot += cust.cash;
+    }
+    return custCashTot;
+  },
+
+  removeCustomerCash(cust, cashDebit) {
+    cust.cash -= cashDebit;
   }
 
 };
